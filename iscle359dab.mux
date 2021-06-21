@@ -1,0 +1,65 @@
+general {
+
+	dabmode 1
+
+	}
+
+remotecontrol { telnetport 0 }
+
+ensemble {
+
+	id 0xe
+	ecc 0xe2 ; Extended Country Code
+	local-time-offset auto
+	international-table 1
+	label "Iscle359 DAB"
+	shortlabel "Iscle359"
+
+	}	
+
+services {
+
+	srv-p1 { label "Iscle359DAB" }
+	srv-p2 { label "R.Mussol" }
+	}
+
+subchannels {
+
+	sub-p1	{
+		type dabplus
+		;inputfile "santuary.dabp"
+	        inputproto edi
+	        inputuri "tcp://localhost:9000"
+
+		bitrate 88
+		id 1
+		protection 1
+		}	
+	sub-p2 {
+	        type dabplus
+                inputproto edi
+                inputuri "tcp://localhost:9001"
+
+                bitrate 88
+                id 2
+                protection 1	
+		}
+
+	}
+
+components {
+
+	comp-p1 {
+		label Iscle359DAB
+		service srv-p1
+		subchannel sub-p1
+		}
+	comp-p2 {
+		label R.Mussol
+		fig2_label "Ràdio Mussol"
+		service srv-p2
+		subchannel sub-p2
+	}
+	}
+
+outputs { output1 "file://sortida.raw?type=raw" }

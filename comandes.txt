@@ -1,0 +1,11 @@
+odr-audioenc -b 88 -v http://iscle359fm.cat:8880/iscle359.mp3 -e tcp://localhost:9000
+
+odr-dabmux iscle359dab.mux
+
+odr-dabmod iscle359fm.ini
+
+hackrf_transfer -t ofdm.fifo -f 216928000 -x 47 -s 4096000 -b 1750000
+
+mkfifo sortida.raw
+mkfifo ofdm.fifo
+
