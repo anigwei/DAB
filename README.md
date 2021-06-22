@@ -1,6 +1,7 @@
 # Andreu - EA3IFH - DAB Transmitting PoC with HackRF and OpenRadioTools under Linux.
 
-Quick guide for personal use that worked me. Have a look at their docs and their PDF (http://opendigitalradio.github.io/mmbtools-doc/mmbtools.pdf)
+### Quick guide for personal use that worked me. 
+### Have a look at their docs and their PDF (http://opendigitalradio.github.io/mmbtools-doc/mmbtools.pdf)
 
 
 1) Have ODR tools installed. They supply a script for Debian/Ubuntu. https://github.com/Opendigitalradio
@@ -26,3 +27,5 @@ Quick guide for personal use that worked me. Have a look at their docs and their
 6) Broadcast that OFDM stream (216,928 is 11A)
 
 `hackrf_transfer -t ofdm.fifo -f 216928000 -x 47 -s 4096000 -b 1750000`
+
+https://twitter.com/ea3ifh/status/1407331447464136722?s=20
