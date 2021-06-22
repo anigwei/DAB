@@ -7,8 +7,9 @@ Quick guide for personal use that worked me. Have a look at their docs and their
 
 2) Create FIFOs
 
-`$mkfifo sortida.raw
-$mkfifo ofdm.fifo`
+`mkfifo sortida.raw`
+
+`mkfifo ofdm.fifo`
 
 3) Get MP3 streaming (or a MP3 file) and publish it via localhost network.
 
